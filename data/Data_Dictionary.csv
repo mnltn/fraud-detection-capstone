@@ -1,0 +1,12 @@
+﻿Column,Type,Description
+step,int64,"Unit of time; 1 step is equivalent to an hour, 744 steps is equivalent to 30 days"
+type,object,"Transaction type, whether it's cash in, cash out, debit, payment, or transfer"
+amount,float64,Transaction amount in used currency
+nameOrig,object,Name of the originating account
+oldbalanceOrg,float64,Account balance before executing the transaction of the originating account
+newbalanceOrig,float64,Account balance after executing the transaction of the originating account
+nameDest,object,Name of the destination / receiving account
+oldbalanceDest,float64,Account balance before executing the transaction of the destination account
+newbalanceDest,float64,Account balance after executing the transaction of the destination account
+isFraud,int64,Tagging if the transaction is fraudulent
+isFlaggedFraud,int64,Tagging if the transaction passed parameters of a fraudulent transaction
