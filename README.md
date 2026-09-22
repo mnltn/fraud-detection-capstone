@@ -80,7 +80,7 @@ before running the notebook.
 ## Limitations
 
 Full detail in the notebook; summarized:
-1. No reliable existing baseline (the current rule-based system catches ~0% of fraud)
+1. No reliable existing baseline (the current rule-based system catches ~0.19% of fraud)
 2. Feature selection included a subjective, domain-knowledge-based judgment call
 3. Model performance is sensitive to hyperparameter choice (`scale_pos_weight`)
 4. Performance is substantially dependent on two engineered features specific to this dataset
