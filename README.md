@@ -30,11 +30,13 @@ before running the notebook.
 ## Repository Structure
 
 ```
+├── src/              Reusable scripts: features.py (feature engineering), predict.py (scoring)
 ├── notebooks/        Full analysis notebook (Steps 1-5: problem framing through
 │                      explainability & fairness audit)
 ├── models/            Trained Logistic Regression, Random Forest, XGBoost + scaler (joblib)
 ├── data/              Data dictionary (raw CSV downloaded separately — see above)
-└── presentations/     Technical deck (Jupyter slides + PDF) and business deck (PDF)
+├── presentations/     Technical deck (Jupyter slides + PDF) and business deck (PDF)
+└── requirements.txt   Python dependencies
 ```
 
 ## Presentations
@@ -64,6 +66,22 @@ before running the notebook.
    is under-protection of lower-balance customers, not over-flagging. See the notebook's fairness
    section and the limitations writeup for the (partially-confirmed) mechanism and proposed
    mitigations.
+
+## Using the Saved Models (src/)
+
+Install dependencies, then run from the repository root:
+
+```bash
+pip install -r requirements.txt
+
+# Reproduce the notebook's test-set results (Random Forest: Precision 1.000, Recall 0.996, PR-AUC 0.998)
+python src/predict.py --input data/PS_20174392719_1491204439457_log.csv --test-split
+
+# Score new transactions (PaySim format) and save fraud probabilities + flags
+python src/predict.py --input data/new_transactions.csv --output predictions.csv
+```
+
+Options: `--model random_forest | xgboost | logistic_regression` and `--threshold 0.5`.
 
 ## Reproducing This
 

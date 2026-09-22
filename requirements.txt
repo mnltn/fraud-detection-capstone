@@ -1,0 +1,10 @@
+# Models in models/ were saved with scikit-learn 1.6.1 (Google Colab).
+# Using the same version avoids version-mismatch warnings when loading them.
+scikit-learn==1.6.1
+xgboost
+pandas
+numpy
+joblib
+shap
+matplotlib
+seaborn
